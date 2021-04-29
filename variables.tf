@@ -1,63 +1,63 @@
 variable "vcl_recv_condition" {
   description = "boolean condition to use to select the backend in vcl_recv"
-  type        = "string"
+  type        = string
 }
 
 variable "backend_name" {
   description = "Identifier for the backend/"
-  type        = "string"
+  type        = string
 }
 
 variable "connect_timeout" {
   description = ""
-  type        = "string"
+  type        = string
   default     = "5s"
 }
 
 variable "dynamic" {
   description = ""
-  type        = "string"
+  type        = string
   default     = "true"
 }
 
 variable "first_byte_timeout" {
   description = ""
-  type        = "string"
+  type        = string
   default     = "20s"
 }
 
 variable "between_bytes_timeout" {
   description = ""
-  type        = "string"
+  type        = string
   default     = "20s"
 }
 
 variable "max_connections" {
   description = ""
-  type        = "string"
+  type        = string
   default     = "1000"
 }
 
 variable "backend_port" {
   description = ""
-  type        = "string"
+  type        = string
   default     = "443"
 }
 
 variable "backend_host" {
   description = ""
-  type        = "string"
+  type        = string
 }
 
 variable "ssl_cert_hostname" {
   description = "The hostname to use to validate the backend certificate - defaults to backend_host if not set."
-  type        = "string"
+  type        = string
   default     = ""
 }
 
 variable "ssl_sni_hostname" {
   description = "Value to send to backend in SNI - default is blank, meaning no hostname is sent (generally should either be ssl_cert_hostname or the host the user is requesting)."
-  type        = "string"
+  type        = string
   default     = ""
 }
 
@@ -73,42 +73,43 @@ variable "ssl_check_cert" {
 
 variable "probe_enabled" {
   description = "Whether the backend should be probed."
-  type        = "string"
+  type        = string
   default     = "false"
 }
 
 variable "probe_threshold" {
   description = "Along with the probe_window, the number of successes per total number health checks. For example, specifying 1/2 means 1 out of 2 checks must pass to be reported as healthy."
-  type        = "string"
+  type        = string
   default     = "1"
 }
 
 variable "probe_window" {
   description = "See the description for probe_threshold above. Default is based on Fastly's \"Low\" option - see https://docs.fastly.com/guides/basic-configuration/health-check-frequency."
-  type        = "string"
+  type        = string
   default     = "2"
 }
 
 variable "probe_initial" {
   description = "The number of requests to assume as passing on deploy. Default is based on Fastly's \"Low\" option - see https://docs.fastly.com/guides/basic-configuration/health-check-frequency."
-  type        = "string"
+  type        = string
   default     = "1"
 }
 
 variable "probe_interval" {
   description = "The period of time for the requests to run. Default is based on Fastly's \"Low\" option - see https://docs.fastly.com/guides/basic-configuration/health-check-frequency."
-  type        = "string"
+  type        = string
   default     = "60s"
 }
 
 variable "probe_timeout" {
   description = "The wait time until request is considered failed. Default is based on Fastly's \"Low\" option - see https://docs.fastly.com/guides/basic-configuration/health-check-frequency."
-  type        = "string"
+  type        = string
   default     = "5s"
 }
 
 variable "healthcheck_path" {
   description = "Path to visit on your origins when performing the check."
-  type        = "string"
+  type        = string
   default     = "/internal/healthcheck"
 }
+
