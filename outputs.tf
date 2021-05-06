@@ -1,9 +1,13 @@
 output "vcl_recv" {
-  value = data.template_file.vcl_recv.rendered
+  value = templatefile("${path.module}/template.vcl", 
+    {
+      vcl_recv_condition = var.vcl_recv_condition
+      backend_name       = var.backend_name
+    }
+  )
 }
 
 output "vcl_backend" {
-  value = data.template_file.vcl_backend.rendered
   value = module.vcl_backend.vcl_backend
 }
 

@@ -1,19 +1,5 @@
-data "template_file" "vcl_recv" {
-  template = <<END
-        if (req.backend == F_default_backend && ($${vcl_recv_condition})) {
-            set req.backend = $${backend_name};
-        }
-END
-
-
-  vars = {
-    vcl_recv_condition = var.vcl_recv_condition
-    backend_name       = var.backend_name
-  }
-}
-
 module "vcl_backend" {
-  source = "github.com/mergermarket/tf_fastly_routing_config_vcl_backend"
+  source = "mergermarket/fastly-routing-config-vcl-backend/acuris"
 
   backend_name          = var.backend_name
   connect_timeout       = var.connect_timeout
