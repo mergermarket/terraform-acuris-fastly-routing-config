@@ -15,7 +15,7 @@ To see all the input variables and outputs see `variables.tf` and `outputs.tf`.
 The required input variables are:
 
 * `vcl_recv_condition` - when to route to the backend as a VCL condition (see
-https://docs.fastly.com/guides/conditions/using-conditions).
+https://docs.fastly.com/en/guides/using-conditions).
 * `backend_name` - the name of the backend (must be unique across backends).
 * `backend_host` - the host to connect to (https default port 443).
 
